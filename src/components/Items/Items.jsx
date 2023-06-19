@@ -22,7 +22,7 @@ export const Items = {
           id: 'stuff',
           name: 'Our cool stuff',
           items: [
-            { name: 'Shirts', href: '#' },
+            { name: 'Shirts', href: '#',},
             { name: 'Pants', href: '#' },
             { name: 'Hoodies', href: '#' },
             { name: 'Sweaters', href: '#' },
