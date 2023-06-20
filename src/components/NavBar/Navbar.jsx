@@ -2,11 +2,11 @@ import { Fragment, useState } from "react";
 import { Dialog, Popover, Tab, Transition } from "@headlessui/react";
 import {
   Bars3Icon,
-  MagnifyingGlassIcon,
   ShoppingBagIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import { Items } from "../Items/Items";
+import { Link } from "react-router-dom";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -94,8 +94,8 @@ export default function NavBar() {
                                   className="object-cover object-center"
                                 />
                               </div>
-                              <a
-                                href={item.href}
+                              <Link
+                                to={item.href}
                                 className="mt-6 block font-medium text-gray-100"
                               >
                                 <span
@@ -103,7 +103,7 @@ export default function NavBar() {
                                   aria-hidden="true"
                                 />
                                 {item.name}
-                              </a>
+                              </Link>
                               <p aria-hidden="true" className="mt-1">
                                 Shop now
                               </p>
@@ -125,12 +125,12 @@ export default function NavBar() {
                             >
                               {section.items.map((item) => (
                                 <li key={item.name} className="flow-root">
-                                  <a
-                                    href={item.href}
+                                  <Link
+                                    to={item.href}
                                     className="-m-2 block p-2 text-gray-100"
                                   >
                                     {item.name}
-                                  </a>
+                                  </Link>
                                 </li>
                               ))}
                             </ul>
@@ -144,18 +144,18 @@ export default function NavBar() {
                 <div className="space-y-6 border-t border-gray-200 px-4 py-6">
                   {Items.pages.map((page) => (
                     <div key={page.name} className="flow-root">
-                      <a
-                        href={page.href}
+                      <Link
+                        to={page.href}
                         className="-m-2 block p-2 font-medium text-gray-100"
                       >
                         {page.name}
-                      </a>
+                      </Link>
                     </div>
                   ))}
                 </div>
 
                 <div className="border-t border-gray-200 px-4 py-6">
-                  <a href="#" className="-m-2 flex items-center p-2">
+                  <div className="-m-2 flex items-center p-2">
                     <img
                       src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Flag_of_Argentina.svg"
                       alt=""
@@ -164,7 +164,7 @@ export default function NavBar() {
                     <span className="ml-3 block text-base font-medium text-gray-100">
                       ARS
                     </span>
-                  </a>
+                  </div>
                 </div>
               </Dialog.Panel>
             </Transition.Child>
@@ -190,14 +190,14 @@ export default function NavBar() {
 
               {/* Logo */}
               <div className="ml-4 flex lg:ml-0">
-                <a href="#">
+                <Link to="/">
                   <span className="sr-only">Dunder Mifflin</span>
                   <img
                     className="h-8 w-auto"
                     src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Dunder_Mifflin%2C_Inc.svg"
                     alt=""
                   />
-                </a>
+                </Link>
               </div>
 
               {/* Flyout menus */}
@@ -252,8 +252,8 @@ export default function NavBar() {
                                               className="object-cover object-center"
                                             />
                                           </div>
-                                          <a
-                                            href={item.href}
+                                          <Link
+                                            to={item.href}
                                             className="mt-6 block font-medium text-gray-100"
                                           >
                                             <span
@@ -261,7 +261,7 @@ export default function NavBar() {
                                               aria-hidden="true"
                                             />
                                             {item.name}
-                                          </a>
+                                          </Link>
                                           <p
                                             aria-hidden="true"
                                             className="mt-1"
@@ -290,12 +290,12 @@ export default function NavBar() {
                                                 key={item.name}
                                                 className="flex"
                                               >
-                                                <a
-                                                  href={item.href}
+                                                <Link
+                                                  to={item.href}
                                                   className="hover:text-gray-100"
                                                 >
                                                   {item.name}
-                                                </a>
+                                                </Link>
                                               </li>
                                             ))}
                                           </ul>
@@ -313,32 +313,32 @@ export default function NavBar() {
                   ))}
 
                   {Items.pages.map((page) => (
-                    <a
+                    <Link
                       key={page.name}
-                      href={page.href}
+                      to={page.href}
                       className="flex items-center text-sm font-medium text-gray-100 hover:text-gray-200"
                     >
                       {page.name}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               </Popover.Group>
 
               <div className="ml-auto flex items-center">
                 <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
-                  <a
-                    href="#"
+                  <Link
+                    to="*"
                     className="text-sm font-medium text-gray-100 hover:text-gray-200"
-                  ></a>
+                  ></Link>
                   <span className="h-6 w-px bg-gray-950" aria-hidden="true" />
-                  <a
-                    href="#"
+                  <Link
+                    to="*"
                     className="text-sm font-medium text-gray-100 hover:text-gray-200"
-                  ></a>
+                  ></Link>
                 </div>
 
                 <div className="hidden lg:ml-8 lg:flex">
-                  <a
+                  <div
                     href="#"
                     className="flex items-center text-gray-100 hover:text-gray-200"
                   >
@@ -349,23 +349,12 @@ export default function NavBar() {
                     />
                     <span className="ml-3 block text-sm font-medium">ARS</span>
                     <span className="sr-only">, change currency</span>
-                  </a>
-                </div>
-
-                {/* Search */}
-                <div className="flex lg:ml-6">
-                  <a href="#" className="p-2 text-gray-100 hover:text-gray-200">
-                    <span className="sr-only">Search</span>
-                    <MagnifyingGlassIcon
-                      className="h-6 w-6"
-                      aria-hidden="true"
-                    />
-                  </a>
+                  </div>
                 </div>
 
                 {/* Cart */}
                 <div className="ml-4 flow-root lg:ml-6">
-                  <a href="#" className="group -m-2 flex items-center p-2">
+                  <Link to="*" className="group -m-2 flex items-center p-2">
                     <ShoppingBagIcon
                       className="h-6 w-6 flex-shrink-0 text-gray-100 group-hover:text-gray-200"
                       aria-hidden="true"
@@ -374,7 +363,7 @@ export default function NavBar() {
                       0
                     </span>
                     <span className="sr-only">items in cart, view bag</span>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

@@ -12,17 +12,21 @@ import Error404 from "./components/Pages/Error/Error404";
 function App() {
   return (
     <BrowserRouter>
-      <NavBar></NavBar>
+      <NavBar />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/About" element={<About />} />
+        <Route path="/about" element={<About />} />
         <Route path="/products" element={<Products />} />
-        <Route path="/products/clothing" element={<ClothingCards />} />
-        <Route path="/products/accesories" element={<AccCards />} />
-        {/* <Route path="/product3" element={<Product3 />} /> */}
+        <Route
+          path="/products/clothing/:categoryId"
+          element={<ClothingCards />}
+        />
+        <Route path="/products/accesories/:categoryId" element={<AccCards />} />
+        <Route path="/products/clothing/" element={<ClothingCards />} />
+        <Route path="/products/accesories/" element={<AccCards />} />
         <Route path="*" element={<Error404 />} />
       </Routes>
-      <Footer></Footer>
+      <Footer />
     </BrowserRouter>
   );
 }

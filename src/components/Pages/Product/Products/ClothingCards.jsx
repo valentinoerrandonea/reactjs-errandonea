@@ -8,10 +8,7 @@ export default function ClothingCards() {
         <div className="mx-auto max-w-2xl py-16 sm:py-24 lg:max-w-none lg:py-32 ">
           <h2 className="text-5xl font-bold text-gray-800">Clothing</h2>
 
-          <div
-            className="mt-6 space-y-12 lg:grid lg:grid-cols-3 lg:gap-x-6 lg:space-y-0"
-            href="/product/clothing/{product.id}"
-          >
+          <div className="mt-6 space-y-12 lg:grid lg:grid-cols-3 lg:gap-x-6 lg:space-y-0">
             {ClothingList.map((product) => (
               <div
                 key={product.title}
@@ -25,10 +22,10 @@ export default function ClothingCards() {
                   />
                 </div>
                 <h3 className="mt-6 text-lg text-gray-900 font-bold">
-                  <a href={product.href}>
+                  <div>
                     <span className="absolute inset-0" />
                     {product.title}
-                  </a>
+                  </div>
                 </h3>
                 <p className="text-base font-semibold text-gray-800">
                   {product.desc}

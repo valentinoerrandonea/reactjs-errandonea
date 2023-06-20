@@ -22,10 +22,10 @@ export const AccCards = () => {
                   />
                 </div>
                 <h3 className="mt-6 text-lg text-gray-900 font-bold">
-                  <a href={product.href}>
+                  <div>
                     <span className="absolute inset-0" />
                     {product.title}
-                  </a>
+                  </div>
                 </h3>
                 <p className="text-base font-semibold text-gray-800">
                   {product.desc}
