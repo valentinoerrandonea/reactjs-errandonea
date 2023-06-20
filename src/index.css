@@ -1,3 +1,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.background-gradient {
+  background-color: rgb(96, 165, 250);
+  background-image: radial-gradient(
+      at 39% 44%,
+      rgb(219, 234, 254) 0,
+      transparent 47%
+    ),
+    radial-gradient(at 31% 21%, rgb(147, 197, 253) 0, transparent 27%),
+    radial-gradient(at 63% 49%, rgb(147, 197, 253) 0, transparent 33%),
+    radial-gradient(at 45% 25%, rgb(30, 58, 138) 0, transparent 25%),
+    radial-gradient(at 40% 6%, rgb(147, 197, 253) 0, transparent 85%),
+    radial-gradient(at 7% 36%, rgb(49, 46, 129) 0, transparent 100%);
+}
+
+.background-gradient-2 {
+  background-color: rgb(229, 231, 235);
+  background-image: radial-gradient(
+      at 52% 23%,
+      rgb(209, 213, 219) 0,
+      transparent 19%
+    ),
+    radial-gradient(at 1% 59%, rgb(156, 163, 175) 0, transparent 22%),
+    radial-gradient(at 61% 5%, rgb(156, 163, 175) 0, transparent 88%),
+    radial-gradient(at 58% 57%, rgb(209, 213, 219) 0, transparent 87%),
+    radial-gradient(at 68% 60%, rgb(243, 244, 246) 0, transparent 11%),
+    radial-gradient(at 41% 95%, rgb(100, 116, 139) 0, transparent 76%);
+}
